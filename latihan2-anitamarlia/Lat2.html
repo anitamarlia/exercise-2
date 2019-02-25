@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 2</title>
+    <link rel="icon" type="image/png" href="./cal.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        function input(a){
+            document.form.textview.value = document.form.textview.value+a;
+        }
+        function output(){
+            var b = document.form.textview.value;
+            if(b){
+                document.form.textview.value = eval(b);
+            }
+        }
+        function reset(){
+            document.form.textview.value = "";
+        } 
+        function del(){
+            var x = document.form.textview.value;
+            document.form.textview.value = x.substring(0,x.length-1);
+        }  
+    </script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 1px;
+        }
+        .opt{
+            width: 80px;
+            height: 40px;
+            font-size: 20;
+            margin: 2px;
+            cursor: pointer;
+            border:none;
+            background: darkseagreen;
+        }
+        .opt:hover{
+            background-color: white;
+        }
+        .btn{
+            width: 80px;
+            height: 40px;
+            font-size: 20;
+            margin: 2px;
+            cursor: pointer;
+            border:none;
+            background: lightblue;
+        }
+        .btn:hover{
+            background-color: white;
+        }
+        .button{
+            width: 165px;
+            height: 40px;
+            font-size: 20;
+            margin: 2px;
+            cursor: pointer;
+            border:none;
+            background: lightblue;
+        }
+        .button:hover{
+            background-color: white;
+        }
+        .textview{
+            width: 335px;
+            margin: 5px;
+            font-size: 25;
+            padding: 5px;
+        }
+        .main{
+            position: absolute;
+            width: auto;
+            height: auto;
+            margin-bottom: 100px;
+            margin-left: 500px;
+            margin-right: 100px;
+            background: darksalmon;
+            border-radius: 3px;
+            box-sizing:border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1 class="display-4">CALCULATOR</h1>
+        <p class="lead">Pengenalan Javascript dan DOM</p>
+        <hr class="my-4">
+        <p class="lead">By Anita Marlia</p> 
+    </div>
+    <div class="main">
+        <form name="form">
+            <input name="textview" class="textview">
+        </form>
+        <table>
+            <tr>
+                <td colspan="2"><input class="button" type="button" value="C" onclick="reset()"></td>
+                <td colspan="2"><input class="button" type="button" value="CE" onclick="del()"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" value="1" onclick="input(1)"></td>
+                <td><input class="btn" type="button" value="2" onclick="input(2)"></td>
+                <td><input class="btn" type="button" value="3" onclick="input(3)"></td>
+                <td><input class="opt" type="button" value="/" onclick="input('/')"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" value="4" onclick="input(4)"></td>
+                <td><input class="btn" type="button" value="5" onclick="input(5)"></td>
+                <td><input class="btn" type="button" value="6" onclick="input(6)"></td>
+                <td><input class="opt" type="button" value="*" onclick="input('*')"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" value="7" onclick="input(7)"</td>
+                <td><input class="btn" type="button" value="8" onclick="input(8)"></td>
+                <td><input class="btn" type="button" value="9" onclick="input(9)"></td>
+                <td><input class="opt" type="button" value="-" onclick="input('-')"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" value="." onclick="input('.')"></td>
+                <td><input class="btn" type="button" value="0" onclick="input(0)"></td>
+                <td><input class="opt" type="button" value="=" onclick="output()"></td>
+                <td><input class="opt" type="button" value="+" onclick="input('+')"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
